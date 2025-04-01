@@ -56,14 +56,14 @@ const csvUpload = multer({
 
 const vcfUpload = multer({
   storage: multer.memoryStorage(),
-  fileFilter: (req, file, cb) => {
-    const allowedTypes = ["application/gzip", "application/x-gzip"];
-    if (allowedTypes.includes(file.mimetype)) {
-      cb(null, true);
-    } else {
-      cb(new Error("Only GZIP files are allowed!"), false);
-    }
-  },
+  // fileFilter: (req, file, cb) => {
+  //   const allowedTypes = ["application/gzip", "application/x-gzip"];
+  //   if (allowedTypes.includes(file.mimetype)) {
+  //     cb(null, true);
+  //   } else {
+  //     cb(new Error("Only GZIP files are allowed!"), false);
+  //   }
+  // },
   limits: { fileSize: 50 * 1024 * 1024 }, // 50MB
 });
 
