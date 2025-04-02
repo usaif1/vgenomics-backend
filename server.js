@@ -77,7 +77,7 @@ app.post("/upload-metadata", csvUpload.single("file"), async (req, res) => {
       });
     }
 
-    const fileName = `metadata/${req.file.originalname}`;
+    const fileName = `input/${req.file.originalname}`;
     const params = {
       Bucket: process.env.AWS_S3_BUCKET_NAME,
       Key: fileName,
@@ -113,7 +113,7 @@ app.post("/upload-vcf", vcfUpload.single("file"), async (req, res) => {
       });
     }
 
-    const fileName = `vcf/${req.file.originalname}`;
+    const fileName = `input/${req.file.originalname}`;
     const params = {
       Bucket: process.env.AWS_S3_BUCKET_NAME,
       Key: fileName,
